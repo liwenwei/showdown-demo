@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>showdown demo</title>
+    <script src="js/showdown.js"></script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap.css" />
+</head>
+<body>
+    <p id="demo" onclick="loadText()">Click me</p>
+    <script>
+        function loadText() {
+            var converter = new showdown.Converter();
+            var md = '[**Showdown**](http://www.showdownjs.com) is *great*\n' +
+			         'because:\n\n' +
+                     ' - it\'s easy to use\n' +
+                     ' - it\'s extensible\n' +
+                     ' - works in the server and in the browser';
+            var html = converter.makeHtml(md);
+            $('#demo').html(html);
+        }
+    </script>
+</body>
+</html>
